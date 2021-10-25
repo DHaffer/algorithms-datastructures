@@ -91,27 +91,28 @@ public class DoublyLinkedList {
     }
 
     // assume non empty list
-    public Node deleteKey(int key){
+    public Node deleteKey(int key) {
         Node current = first; // start from the beginning
-        while(current.data != key){
+        while (current.data != key) {
             current = current.next;
-            if(current == null){
+            if (current == null) {
                 return null;
             }
         }
 
         if (current == first) {
             first = current.next; // make the first field point to the node following current since current will be deleted
-        } else{
+        } else {
             current.previous.next = current.next;
         }
 
-        if (current == last){
+        if (current == last) {
             last = current.previous;
         }
+        return current;
+
 
     }
-
 
 
 }
